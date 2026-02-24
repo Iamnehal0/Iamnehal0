@@ -1,4 +1,4 @@
-name: Generate Pac-Man Game
+name: Generate Snake Game
 
 on:
   schedule:
@@ -9,15 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Checkout your repo
       - uses: actions/checkout@v3
-      - uses: abozanona/pacman-contribution-graph@main
+
+      # Generate the snake animation
+      - uses: Platane/snk@master
         with:
           github_user_name: Iamnehal0
-          outputs: dist/pacman.svg
-      - name: Commit Pac-Man
+          outputs: dist/snake.svg
+
+      # Commit the generated file back to your repo
+      - name: Commit Snake
         uses: EndBug/add-and-commit@v9
         with:
           author_name: github-actions
           author_email: github-actions@github.com
-          message: "Generate Pac-Man Game"
+          message: "Generate Snake Game"
           add: "dist/*"
