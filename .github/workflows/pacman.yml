@@ -1,0 +1,23 @@
+name: Generate Pac-Man Game
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # runs every 12 hours
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: Iamnehal0
+          outputs: dist/pacman.svg
+      - name: Commit Pac-Man
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: "Generate Pac-Man Game"
+          add: "dist/*"
