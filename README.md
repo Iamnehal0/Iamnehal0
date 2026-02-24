@@ -46,9 +46,8 @@ A modular API built with Go, featuring custom handlers, middleware, and Dockeriz
 ## ✨ Fun Fact  
 I thrive on **stepwise learning and analogy-driven explanations** — whether debugging code or teaching concepts, I love breaking things down into clear, reusable workflows.  
 
-## ✈️ Contribution Airplane Game
-![GitHub Airplane Game](https://github.com/Iamnehal0/Iamnehal0/blob/output/airplane.svg)
-
+## 🟡 Contribution Pac-Man Game
+![GitHub Pac-Man Game](https://github.com/Iamnehal0/Iamnehal0/blob/output/pacman.svg)
 ---
 
 ⭐️ *Pinned repositories showcase my best work and ongoing projects. Stay tuned for updates as I grow my portfolio!*  
