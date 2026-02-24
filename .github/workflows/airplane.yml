@@ -9,17 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # Checkout your repo
+      - uses: actions/checkout@v3
+
+      # Generate the animation (default snake, can be customized)
       - uses: Platane/snk@master
         with:
           github_user_name: Iamnehal0
           outputs: dist/airplane.svg
-          # Customize sprite here (default is snake, you can replace with airplane sprite)
-          theme: pixel-airplane
+
+      # Commit the generated file back to your repo
       - name: Push Airplane
         uses: EndBug/add-and-commit@v9
         with:
           author_name: github-actions
           author_email: github-actions@github.com
           message: "Generate Airplane Game"
-          add: "dist/*.svg"
+          add: "dist/*"
