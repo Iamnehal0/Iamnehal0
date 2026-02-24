@@ -1,0 +1,25 @@
+name: Generate Airplane Game
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # runs every 12 hours
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: Platane/snk@master
+        with:
+          github_user_name: Iamnehal0
+          outputs: dist/airplane.svg
+          # Customize sprite here (default is snake, you can replace with airplane sprite)
+          theme: pixel-airplane
+      - name: Push Airplane
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: "Generate Airplane Game"
+          add: "dist/*.svg"
